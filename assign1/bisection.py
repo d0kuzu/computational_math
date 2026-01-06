@@ -9,19 +9,19 @@ def task(function, stop=0.001):
     i = 1
     while True:
         print("iteration ", i)
-        last = (first + second)/2
+        answer = (first + second)/2
 
         width = second - first
         print("first ", first, " second ", second)
         print("width ", width)
         if width < stop:
-            return last
+            return answer
 
-        func_answer = function(last)
+        func_answer = function(answer)
         if func_answer < 0:
-            first = last
+            first = answer
         else:
-            second = last
+            second = answer
         print("function answer ", func_answer)
         print("\n")
         i+=1

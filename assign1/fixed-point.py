@@ -1,4 +1,4 @@
-def task(function, g, stop=0.001):
+def task(g, stop=0.001):
     # if function(1) < 0:
     #     first = 1
     #     second = 2
@@ -19,5 +19,5 @@ def task(function, g, stop=0.001):
         i+=1
 
 f = lambda x: x**3 - x - 2
-g = lambda x: (x+2)**(1/3)
-print(round(task(f, g), 3))
+g = lambda x: (x+2)**(1/3)  #производная меньше 1
+print(round(task(g), 3))
