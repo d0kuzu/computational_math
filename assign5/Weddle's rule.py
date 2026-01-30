@@ -1,6 +1,8 @@
-func = lambda x: 1 / (1 + x**2)
-x0, xn = 0, 6
-n = 4
+import math
+
+func = lambda x: math.log(x)
+x0, xn = 4, 5.2
+n = 6
 
 h = (xn - x0) / n
 
@@ -10,14 +12,14 @@ for i in range(n+1):
     yi = func(x0 + i*h)
 
     if i == 0 or i == n:
-        summ += 7*yi
+        summ += yi
+    elif i % 6 == 3:
+        summ += 6*yi
     elif i % 2 == 1:
-        summ += 32*yi
-    elif i % 4 == 2:
-        summ += 12*yi
+        summ += 5*yi
     else:
-        summ += 14*yi
+        summ += yi
 
-I = 2 * h/45 * summ
+I = 3 * h/10 * summ
 
 print(I)
